@@ -11,7 +11,6 @@ Patch0:		tcc-0.9.23-DESTDIR.diff
 Patch1:		tcc-0.9.23-binutils_fix.diff
 Patch2:		tcc_0.9.23-2.diff
 ExclusiveArch:	%{ix86}
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Tiny C Compiler - C Scripting Everywhere - The Smallest ANSI C 
