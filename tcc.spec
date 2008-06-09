@@ -50,9 +50,13 @@ install -d %{buildroot}%{_mandir}/man1
 # cleanup
 rm -rf %{buildroot}%{_docdir}/tcc
 
+%if %mdkversion < 200900
 %post -p /sbin/ldconfig
+%endif
 
+%if %mdkversion < 200900
 %postun -p /sbin/ldconfig
+%endif
 
 %clean
 [ -n "%{buildroot}" -a "%{buildroot}" != / ] && rm -rf %{buildroot}
