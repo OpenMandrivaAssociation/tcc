@@ -6,9 +6,6 @@ License:	GPL
 Group:		Development/C
 URL:		http://bellard.org/tcc/
 Source0:	http://download.savannah.nongnu.org/releases/tinycc/%{name}-%{version}.tar.bz2
-# http://www.mail-archive.com/tinycc-devel%40nongnu.org/msg00297.html
-Patch1:		tcc-0.9.23-binutils_fix.diff
-Patch2:		tcc_0.9.23-2.diff
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
@@ -19,7 +16,6 @@ compiler
 %prep
 
 %setup -q
-%patch2 -p1
 
 # (tv) use DESTDIR:
 perl -pi -e 's!(\$\((bin|doc|include|lib|man|tcc)dir)!\$(DESTDIR)\1!' Makefile
