@@ -66,7 +66,6 @@ rm -rf %{buildroot}%{_docdir}/tcc
 %doc Changelog README TODO *.html examples
 %defattr(-,root,root)
 %{_bindir}/tcc
-%{_libdir}/tcc/*.o
 %{_libdir}/tcc/include/*.h
 %{_libdir}/tcc/*.a
 %{_libdir}/*.a
