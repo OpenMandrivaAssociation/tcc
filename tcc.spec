@@ -71,6 +71,9 @@ rm -rf %{buildroot}%{_docdir}/tcc
 %{_bindir}/tcc
 %{_libdir}/tcc/include/*.h
 %{_libdir}/tcc/*.a
+%ifarch %{ix86}
+%{_libdir}/tcc/*.o
+%endif
 %{_libdir}/*.a
 %{_includedir}/*.h
 %{_mandir}/man1/tcc.1*
