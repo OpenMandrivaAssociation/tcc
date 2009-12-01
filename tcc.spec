@@ -1,7 +1,7 @@
 Summary:	Tiny C Compiler
 Name:		tcc
-Version:	0.9.23
-Release:	%mkrel 7
+Version:	0.9.25
+Release:	%mkrel 1
 License:	GPL
 Group:		Development/C
 URL:		http://bellard.org/tcc/
