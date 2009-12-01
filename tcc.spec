@@ -4,8 +4,8 @@ Version:	0.9.23
 Release:	%mkrel 7
 License:	GPL
 Group:		Development/C
-URL:		http://fabrice.bellard.free.fr/tcc/
-Source0:	http://fabrice.bellard.free.fr/tcc/%{name}-%{version}.tar.bz2
+URL:		http://bellard.org/tcc/
+Source0:	http://download.savannah.nongnu.org/releases/tinycc/%{name}-%{version}.tar.bz2
 Patch0:		tcc-0.9.23-DESTDIR.diff
 # http://www.mail-archive.com/tinycc-devel%40nongnu.org/msg00297.html
 Patch1:		tcc-0.9.23-binutils_fix.diff
