@@ -44,7 +44,7 @@ install -d %{buildroot}%{_bindir}
 install -d %{buildroot}%{_includedir}
 install -d %{buildroot}%{_mandir}/man1
 
-%makeinstall_std tcc_install libinstall
+%makeinstall_std
 
 
 # cleanup
