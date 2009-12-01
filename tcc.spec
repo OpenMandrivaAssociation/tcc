@@ -6,7 +6,6 @@ License:	GPL
 Group:		Development/C
 URL:		http://bellard.org/tcc/
 Source0:	http://download.savannah.nongnu.org/releases/tinycc/%{name}-%{version}.tar.bz2
-Patch0:		tcc-0.9.23-DESTDIR.diff
 # http://www.mail-archive.com/tinycc-devel%40nongnu.org/msg00297.html
 Patch1:		tcc-0.9.23-binutils_fix.diff
 Patch2:		tcc_0.9.23-2.diff
@@ -20,9 +19,10 @@ compiler
 %prep
 
 %setup -q
-%patch0 -p0
-%patch1 -p0
 %patch2 -p1
+
+# (tv) use DESTDIR:
+perl -pi -e 's!(\$\((bin|doc|include|lib|man|tcc)dir)!\$(DESTDIR)\1!' Makefile
 
 # path fix
 find -type f | xargs perl -pi -e "s|^#\!/usr/local/bin|#\!%{_bindir}|g"
