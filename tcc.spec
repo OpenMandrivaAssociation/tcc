@@ -6,7 +6,8 @@ License:	GPL
 Group:		Development/C
 URL:		http://bellard.org/tcc/
 Source0:	http://download.savannah.nongnu.org/releases/tinycc/%{name}-%{version}.tar.bz2
-ExclusiveArch:	%{ix86}
+# (tv) fix tccdir on x86_64:
+Patch3:		tcc-0.9.25-tccdif.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -16,12 +17,18 @@ compiler
 %prep
 
 %setup -q
+%patch3 -p0
 
 # (tv) use DESTDIR:
 perl -pi -e 's!(\$\((bin|doc|include|lib|man|tcc)dir)!\$(DESTDIR)\1!' Makefile
 
 # path fix
 find -type f | xargs perl -pi -e "s|^#\!/usr/local/bin|#\!%{_bindir}|g"
+
+# (tv) fix path on x86_64:
+%ifarch x86_64
+perl -pi -e 's!/usr/lib!/usr/lib64!' libtcc.c tcc.h
+%endif
 
 # fix attribs
 chmod 644 examples/*
