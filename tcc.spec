@@ -32,7 +32,7 @@ chmod 644 examples/*
 
 %build
 
-%configure
+%configure2_5x
 
 make CFLAGS="%{optflags}"
 #make test
