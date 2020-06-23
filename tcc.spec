@@ -8,6 +8,8 @@ License:	GPL
 Group:		Development/C
 URL:		https://repo.or.cz/w/tinycc.git
 Source0:	http://download.savannah.nongnu.org/releases/tinycc/%{name}-%{version}%{?snapshot:-%{snapshot}}.tar.zst
+BuildRequires:	texinfo
+BuildRequires:	make
 
 %description
 Tiny C Compiler - C Scripting Everywhere - The Smallest ANSI C 
